@@ -32,9 +32,9 @@ class Screen:
         y = HEIGHT - HEIGHT // 15
 
         self._buttons = [
-            Button(Vec2(x, y), Vec2(100, 50), "Next", next, (255, 165, 0)),
-            Button(Vec2(x + 100, y), Vec2(100, 50), "Show", show, (0, 100, 100)),
-            Button(Vec2(x + 200, y), Vec2(100, 50), "Save", save, (252, 243, 166)),
+            Button(Vec2(x, y), Vec2(100, 50), "Next", next, color=(255, 165, 0)),
+            Button(Vec2(x + 100, y), Vec2(100, 50), "Show", show, color=(0, 100, 100)),
+            Button(Vec2(x + 200, y), Vec2(100, 50), "Save", save, color=(252, 243, 166)),
         ]
 
         self.reset()
@@ -68,22 +68,3 @@ class Screen:
                     sys.exit()
 
                 self.handle_buttons(event)
-
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_SPACE:
-                        self.show_mains = not self.show_mains 
-                        self.draw_all()
-                        pygame.display.flip()
-                        
-
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_s:
-                        svg = SVG(f"Example-{str(int(time()))[5:]}", WIDTH, HEIGHT)
-                        
-                        
-
-                    
-
-if __name__ == '__main__': 
-    screen = Screen()
-    screen.main()

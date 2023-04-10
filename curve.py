@@ -1,5 +1,4 @@
 import pygame
-from random import randrange
 from settings import *
 from line import Line
 from vector import Vec2
@@ -71,8 +70,3 @@ class Curve:
             path += p; path += ", "
 
         return s % path
-
-
-if __name__ == "__main__":
-    c = Curve()
-    print(c.point(c.main_lines(5), 0.5))
